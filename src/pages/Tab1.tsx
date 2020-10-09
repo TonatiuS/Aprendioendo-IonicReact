@@ -1,26 +1,31 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonMenuButton, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+
 import './Tab1.css';
 
-const Tab1: React.FC = () => {
+const Page1: React.FC = () => {
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 1</IonTitle>
+          <IonButtons slot="start">
+            <IonMenuButton/>
+          </IonButtons>
+          <IonTitle>Sfleet</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 1 page" />
-      </IonContent>
+          <IonContent>
+            <IonGrid>
+              <IonRow>
+                <IonCol>
+                  <h1>Bienvenido.name </h1>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+          </IonContent>
     </IonPage>
   );
 };
 
-export default Tab1;
+export default Page1;

@@ -2,16 +2,26 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
+  IonButtons,
+  IonContent,
+  IonHeader,
   IonIcon,
+  IonItem,
   IonLabel,
+  IonList,
+  IonMenu,
+  IonMenuButton,
+  IonMenuToggle,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
-  IonTabs
+  IonTabs,
+  IonTitle,
+  IonToolbar
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
+import { bodyOutline, carSharp, chatbubble, documentAttachOutline, ellipse } from 'ionicons/icons';
+import Page1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
@@ -37,25 +47,52 @@ import './theme/variables.css';
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
+      <IonMenu side="start" contentId="MenuApp1">
+        <IonHeader>
+          <IonToolbar color="primary">
+            <IonButtons slot="start">
+              <IonMenuButton/>
+            </IonButtons>
+            <IonTitle>Start Menu</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          <IonList>
+
+            <IonMenuToggle>
+
+            <IonItem routerLink="/tab2"> <IonIcon icon={bodyOutline} /> Item</IonItem>
+            <IonItem> <IonIcon icon={carSharp} />                       Item</IonItem>
+            <IonItem> <IonIcon icon={documentAttachOutline} />          Item</IonItem>
+            <IonItem>  Item</IonItem>
+            <IonItem>  Item</IonItem>
+            <IonItem>  Item</IonItem>
+
+            </IonMenuToggle>
+          </IonList>
+        </IonContent>
+      </IonMenu>
       <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/tab1" component={Tab1} exact={true} />
+
+      
+        <IonRouterOutlet id="MenuApp1">
+          <Route path="/tab1" component={Page1} exact={true} />
           <Route path="/tab2" component={Tab2} exact={true} />
           <Route path="/tab3" component={Tab3} />
           <Route path="/" render={() => <Redirect to="/tab1" />} exact={true} />
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+            <IonIcon icon={carSharp} />
+            <IonLabel>Inicio</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+            <IonLabel>Menu</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+            <IonIcon icon={chatbubble} />
+            <IonLabel>Chat</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
