@@ -40,6 +40,11 @@ import './Tab2.css';
       <IonIcon slot="end" icon={calculator} />
     </IonButton>
 
+    <IonButton shape="round" expand="full" color="success"  href="/page_utilites/page_todos">
+      Tareas
+      <IonIcon slot="end" icon={calculator} />
+    </IonButton>
+
   </IonContent>
   
   </IonPage>
