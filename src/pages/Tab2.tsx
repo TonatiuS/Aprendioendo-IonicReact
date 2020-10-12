@@ -1,12 +1,17 @@
 import React from 'react';
-import { IonButton, IonIcon, IonContent, IonPage, IonHeader } from '@ionic/react';
+import { IonButton, IonIcon, IonContent, IonPage, IonToolbar, IonMenuButton, IonTitle  } from '@ionic/react';
 import { calculator } from 'ionicons/icons';
 import './Tab2.css';
 
  const Tab2: React.FC = () => (
 
   <IonPage>
-  
+  <IonToolbar>
+            <IonButton slot="start">
+              <IonMenuButton/>
+            </IonButton>
+            <IonTitle>MINI-Menu</IonTitle>
+          </IonToolbar>
   <IonContent>
     {/*-- Default --*/}
     <IonButton>Default</IonButton>
@@ -30,7 +35,7 @@ import './Tab2.css';
     <IonButton expand="block">Block Button</IonButton>
 
     
-    <IonButton shape="round" expand="full" color="success" >
+    <IonButton shape="round" expand="full" color="success"  href="/page_utilites/page_calculator">
       Calculadora
       <IonIcon slot="end" icon={calculator} />
     </IonButton>
